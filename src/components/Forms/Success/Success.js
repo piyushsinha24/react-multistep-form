@@ -2,7 +2,7 @@ import React from 'react';
 
 function Success() {
   return (
-    <div>Success</div>
+    <div className='font-medium'>Workspace successfully created!</div>
   );
 }
 
