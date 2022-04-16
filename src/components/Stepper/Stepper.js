@@ -6,12 +6,10 @@ function Stepper() {
   useEffect(() => {
     const stepperItems = document.querySelectorAll(".stepper-item");
     stepperItems.forEach((step, i) => {
-      if (i === activeStepIndex) {
+      if (i <= activeStepIndex) {
         step.classList.add("bg-indigo-500", "text-white");
-      } else if (i < activeStepIndex) {
-        step.classList.add("bg-green-500", "text-white");
       } else {
-        step.classList.remove("bg-indigo-500", "bg-green-500", "text-white");
+        step.classList.remove("bg-indigo-500", "text-white");
       }
     });
   }, [activeStepIndex]);
@@ -27,10 +25,6 @@ function Stepper() {
       <div className="flex-auto border-t-2"></div>
       <div className="stepper-item w-8 h-8 text-center font-medium border-2 rounded-full">
         3
-      </div>
-      <div className="flex-auto border-t-2"></div>
-      <div className="stepper-item w-8 h-8 text-center font-medium border-2 rounded-full">
-        4
       </div>
     </div>
   );
